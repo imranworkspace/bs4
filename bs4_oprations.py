@@ -34,3 +34,7 @@ for t in tag:
 
 for l in soup.find_all('li'):
     print(l.get('id'))
+# small brach work
+tag = soup.find('span')
+tag['id']='veryid'
+print(tag['id'])
