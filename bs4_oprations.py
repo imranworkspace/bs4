@@ -34,8 +34,26 @@ for t in tag:
 
 # advance
 # find id and class
-print(soup.find(id='b3')) 
+'''print(soup.find(id='b3')) 
 print()
 print(soup.find(class_="imran2"))
 print(soup.find(class_="imran2").string)
 
+'''
+
+# find children
+''' for child in soup.find(class_="container").children:
+       print(child)
+'''
+# find parents
+'''for p in soup.find(class_="container").parents:
+    print(p)
+'''
+
+
+'''
+ container = soup.find(class_="container") # find by class name using "class_"
+container.name='span' # change tag div to span tag
+container['class']=['mycontainer1','mycontainer2'] # add class names 
+print(container)
+'''
