@@ -1,8 +1,5 @@
-from bs4 import BeautifulSoup
+from functions.mysoup import soup
 
-with open('data/sample.html','r') as f:
-    html_file = f.read()
-soup = BeautifulSoup(html_file,'html.parser')
 # print(soup.prettify())
 # print(soup.find_all("div"))
 # print(soup.title)
@@ -57,7 +54,7 @@ container.name='span' # change tag div to span tag
 container['class']=['mycontainer1','mycontainer2'] # add class names 
 print(container)
 '''
-
+'''
 ul_tag = soup.new_tag('ul')
 
 li_tag = soup.new_tag('li')
@@ -76,3 +73,30 @@ soup.body.insert_before(ul_tag)
 
 with open("data/modified.html", "w") as f:
     f.write(str(soup))
+'''
+
+# write_functions
+from functions import bs4_functions  as bs4fun
+
+'''
+# get all classes,ids,content and so on using above packages
+results = soup.find(bs4fun.has_class)
+for result in results:
+    print(result)'''
+    # print(result.string)
+
+get_id = bs4fun.has_id_para("b1")
+get_class = bs4fun.has_class_para("imran")
+get_classes = soup.find_all(bs4fun.has_class)
+get_ids = soup.find_all(bs4fun.has_id)
+print('----------id------------')
+print('id ',get_id)
+print('----------ids------------')
+print('ids ',get_ids)
+print('----------class------------')
+print('class ',get_class)
+print('---------classes-------------')
+print('classes ',get_classes)
+
+
+
