@@ -32,3 +32,5 @@ for t in tag:
     print() 
 '''
 
+for l in soup.find_all('li'):
+    print(l.get('id'))
