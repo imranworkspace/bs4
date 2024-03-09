@@ -32,3 +32,10 @@ for t in tag:
     print() 
 '''
 
+# advance
+# find id and class
+print(soup.find(id='b3')) 
+print()
+print(soup.find(class_="imran2"))
+print(soup.find(class_="imran2").string)
+
