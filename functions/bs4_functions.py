@@ -11,6 +11,10 @@ def has_id_para(tag):
 def has_class_para(tag):
     return soup.find(class_=tag)
 
+def has_classall_para(soup,tag):
+    print('soup ',soup)
+    return soup.find_all(class_=tag)
+
 def has_content(tag):
     return tag.has_attr('content')
 
