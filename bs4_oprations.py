@@ -32,3 +32,47 @@ for t in tag:
     print() 
 '''
 
+# advance
+# find id and class
+'''print(soup.find(id='b3')) 
+print()
+print(soup.find(class_="imran2"))
+print(soup.find(class_="imran2").string)
+
+'''
+
+# find children
+''' for child in soup.find(class_="container").children:
+       print(child)
+'''
+# find parents
+'''for p in soup.find(class_="container").parents:
+    print(p)
+'''
+
+
+'''
+ container = soup.find(class_="container") # find by class name using "class_"
+container.name='span' # change tag div to span tag
+container['class']=['mycontainer1','mycontainer2'] # add class names 
+print(container)
+'''
+
+ul_tag = soup.new_tag('ul')
+
+li_tag = soup.new_tag('li')
+li_tag.string = 'imran'
+ul_tag.append(li_tag)
+
+li_tag = soup.new_tag('li')
+li_tag.string = 'irfan'
+ul_tag.append(li_tag)
+
+li_tag = soup.new_tag('li')
+li_tag.string = 'muskan'
+ul_tag.append(li_tag)
+
+soup.body.insert_before(ul_tag)
+
+with open("data/modified.html", "w") as f:
+    f.write(str(soup))
