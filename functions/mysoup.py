@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
+from dotenv import dotenv_values
+env_vars = dotenv_values('.env')
+
 try:
-    with open('data/sample.html','r') as f:
+    with open(env_vars.get('sample_html_path'),'r') as f:
         html_file = f.read()
 except FileNotFoundError as e:
     print(f'{e.filename} file does not exist')
