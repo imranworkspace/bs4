@@ -12,7 +12,7 @@ def has_class_para(tag):
     return soup.find(class_=tag)
 
 def has_classall_para(soup,tag):
-    print('soup ',soup)
+    # print('soup ',soup)
     return soup.find_all(class_=tag)
 
 def has_content(tag):

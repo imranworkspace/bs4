@@ -4,10 +4,7 @@ from bs4 import BeautifulSoup
 import requests 
 from functions import bs4_functions as bs4fun
 import convertion as con
-import multiprocessing 
-import time
 env_vars = dotenv_values('.env')
-
 
 @time_calculation
 def flipkart_scrap():
@@ -17,15 +14,14 @@ def flipkart_scrap():
     soup = BeautifulSoup(r.content,'html.parser')
     titles_  = bs4fun.has_classall_para(soup,"_4rR01T")
     price_  = bs4fun.has_classall_para(soup,"_30jeq3 _1_WHN1")
-    for t in titles_:
-        title_lst.append(t.get_text())
-    for p in price_:
-        pencode = p.get_text()
-        pcode = pencode.replace('?', '₹')
-        price_lst.append(pcode)
+    if titles_ and price_:
+        title_lst = [t.get_text() for t in titles_]
+        price_lst = [p.get_text().replace('?', '₹') for p in price_]
+    else:
+        print("No titles   prices found.")
+        return None, None
     con.df_to_csv(title_lst,price_lst)
     return title_lst,price_lst
-
 if __name__=="__main__":
     flipkart_scrap()
 
