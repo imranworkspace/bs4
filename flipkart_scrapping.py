@@ -4,11 +4,10 @@ from bs4 import BeautifulSoup
 import requests 
 from functions import bs4_functions as bs4fun
 import convertion as con
-env_vars = dotenv_values('.env')
+
 
 @time_calculation
-def flipkart_scrap():
-    title_lst,price_lst=[],[]
+def flipkart_scrap(env_vars,title_lst,price_lst):
     url = env_vars.get('flipkart_path')
     r = requests.get(str(url))
     soup = BeautifulSoup(r.content,'html.parser')
@@ -23,5 +22,7 @@ def flipkart_scrap():
     con.df_to_csv(title_lst,price_lst)
     return title_lst,price_lst
 if __name__=="__main__":
-    flipkart_scrap()
+    env_vars = dotenv_values('.env')
+    title_lst,price_lst=[],[]
+    flipkart_scrap(env_vars,title_lst,price_lst)
 

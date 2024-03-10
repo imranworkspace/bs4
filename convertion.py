@@ -5,8 +5,8 @@ def df_to_csv(title_lst,price_lst):
         pass
     else:
         df=pd.DataFrame(
-            {"Title":title_lst,
-            "Price":price_lst}
+            {"Title":tuple(title_lst),
+            "Price":tuple(price_lst)}
         )
         df.to_csv(env_vars.get('csv_path'),index=False,encoding='utf-8')
         print(df)
