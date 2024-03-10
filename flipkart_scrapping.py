@@ -5,7 +5,6 @@ import requests
 from functions import bs4_functions as bs4fun
 import convertion as con
 
-
 @time_calculation
 def flipkart_scrap(env_vars,title_lst,price_lst):
     url = env_vars.get('flipkart_path')
@@ -20,6 +19,7 @@ def flipkart_scrap(env_vars,title_lst,price_lst):
         print("No titles   prices found.")
         return None, None
     con.df_to_csv(title_lst,price_lst)
+    con.df_to_mysql(title_lst,price_lst)
     return title_lst,price_lst
 if __name__=="__main__":
     env_vars = dotenv_values('.env')
