@@ -18,7 +18,7 @@ def flipkart_scrap(env_vars,title_lst,price_lst):
     else:
         print("No titles   prices found.")
         return None, None
-    con.df_to_csv(title_lst,price_lst)
+    # con.df_to_csv(title_lst,price_lst)
     con.df_to_mysql(title_lst,price_lst)
     return title_lst,price_lst
 if __name__=="__main__":
