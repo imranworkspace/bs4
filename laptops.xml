@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Laptops>
+  <Laptop>
+    <laptop_name>Lenovo IdeaPad 3 Chromebook Intel Celeron Dual Core N4020 - (4 GB/64 GB EMMC Storage/Chrome OS) ideapa...</laptop_name>
+    <price>₹17,690</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Lenovo IdeaPad Slim 3 Chromebook Intel Celeron Dual Core N4020 - (4 GB/64 GB EMMC Storage/Chrome OS) 1...</laptop_name>
+    <price>₹22,999</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Infinix Y1 Plus Neo Intel Intel Celeron Quad Core 11th Gen JSL N5100 - (8 GB/512 GB SSD/Windows 11 Hom...</laptop_name>
+    <price>₹22,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>HP 15s Intel Core i3 12th Gen 1215U - (8 GB/512 GB SSD/Windows 11 Home) 15s-fq5007TU Thin and Light La...</laptop_name>
+    <price>₹37,527</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Apple 2020 Macbook Air Apple M1 - (8 GB/256 GB SSD/Mac OS Big Sur) MGN63HN/A</laptop_name>
+    <price>₹81,490</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>ASUS Vivobook 15 Intel Core i3 11th Gen 1115G4 - (16 GB/512 GB SSD/Windows 11 Home) X515EA-EJ342WS Thi...</laptop_name>
+    <price>₹35,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>ASUS Vivobook 15 Intel Core i3 11th Gen 1115G4 - (8 GB/256 GB SSD/Windows 11 Home) X515EA-EJ312W Thin ...</laptop_name>
+    <price>₹28,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>ASUS TUF Gaming A16 Advantage Edition (2023) with 90WHr Battery, AI Powered AMD Ryzen 9 Octa Core 7940...</laptop_name>
+    <price>₹1,09,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Infinix Y1 Plus Neo Intel Intel Celeron Quad Core 11th Gen JSL N5100 - (8 GB/512 GB SSD/Windows 11 Hom...</laptop_name>
+    <price>₹22,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Lenovo V15 AMD Ryzen 3 Quad Core 7320U - (8 GB/512 GB SSD/Windows 11 Home) V15 G4 Thin and Light Lapto...</laptop_name>
+    <price>₹27,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Lenovo Lenovo LOQ AI Powered AMD Ryzen 7 Octa Core 7840HS - (16 GB/512 GB SSD/Windows 11 Home/6 GB Gra...</laptop_name>
+    <price>₹85,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>ASUS ROG Zephyrus G14 (2023) with 76WHr Battery, AI Powered AMD Ryzen 9 Octa Core 7940HS - (32 GB/1 TB...</laptop_name>
+    <price>₹2,66,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Acer Aspire Lite AMD Ryzen 5 Hexa Core 5500U - (16 GB/1 TB SSD/Windows 11 Home) AL15-41 Thin and Light...</laptop_name>
+    <price>₹38,790</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>ASUS Vivobook 15 Intel Core i5 11th Gen 1135G7 - (8 GB/512 GB SSD/Windows 11 Home) X515EA-EJ522WS Thin...</laptop_name>
+    <price>₹42,230</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>HP 2023 AMD Ryzen 3 Dual Core 3250U - (8 GB/512 GB SSD/Windows 11 Home) 15s- eq1580AU Thin and Light L...</laptop_name>
+    <price>₹31,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>DELL Intel Core i3 12th Gen 1215U - (8 GB/512 GB SSD/Windows 11 Home) New Inspiron 15 Laptop Thin and ...</laptop_name>
+    <price>₹35,890</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>MSI Bravo 15 AMD Ryzen 5 Hexa Core 7535HS - (8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/AMD Radeon ...</laptop_name>
+    <price>₹49,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>MSI Pulse 17 Intel Core i9 13th Gen 13900H - (16 GB/1 TB SSD/Windows 11 Home/8 GB Graphics/NVIDIA GeFo...</laptop_name>
+    <price>₹1,83,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>SAMSUNG Galaxy Book 2 Intel Core i5 12th Gen 1235U - (8 GB/512 GB SSD/Windows 11 Home) NP550 Thin and ...</laptop_name>
+    <price>₹42,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>HP 255 G9 AMD Ryzen 3 Dual Core AMD Ryzen3 3250 - (8 GB/512 GB SSD/Windows 11 Home) 255 G8 Notebook No...</laptop_name>
+    <price>₹25,440</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>HP Victus AI Powered AMD Ryzen 7 Octa Core 7840HS - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NV...</laptop_name>
+    <price>₹79,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Lenovo Lenovo LOQ AI Powered AMD Ryzen 7 Octa Core 7840HS - (16 GB/512 GB SSD/Windows 11 Home/8 GB Gra...</laptop_name>
+    <price>₹1,01,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>Lenovo IdeaPad 1 AMD Athlon Dual Core 7120U - (8 GB/512 GB SSD/Windows 11 Home) 15AMN7 Thin and Light ...</laptop_name>
+    <price>₹26,990</price>
+  </Laptop>
+  <Laptop>
+    <laptop_name>SAMSUNG Galaxy Book2 Pro EVO AMOLED Intel Core i5 12th Gen 1240P - (16 GB/512 GB SSD/Windows 11 Home) ...</laptop_name>
+    <price>₹62,990</price>
+  </Laptop>
+</Laptops>

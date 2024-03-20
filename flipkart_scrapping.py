@@ -20,6 +20,10 @@ def flipkart_scrap(env_vars,title_lst,price_lst):
         return None, None
     # con.df_to_csv(title_lst,price_lst)
     con.df_to_mysql(title_lst,price_lst)
+    # Convert DataFrame to XML
+    con.df_to_xml(title_lst,price_lst)
+    # Convert DataFrame to excel
+    con.df_to_excel(title_lst,price_lst)
     return title_lst,price_lst
 if __name__=="__main__":
     env_vars = dotenv_values('.env')

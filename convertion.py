@@ -46,7 +46,7 @@ def df_to_mysql(*args):
     if table_name=='':
         print('table does not found')
     if len(args)==0:
-        print('resultset empty')
+        print(env_vars.get('EMPTY_RESULTSET'))
     else:
         payload = categories_data_from_args(args)
         df=mydf(payload)
@@ -58,3 +58,34 @@ def df_to_mysql(*args):
         except Exception as e:
             print("Error occurred while inserting data into MySQL table:", e)
 
+def df_to_xml(*args):
+    if len(args)==0:
+        print(env_vars.get('EMPTY_RESULTSET'))
+    else:
+        payload = categories_data_from_args(args)
+        df=mydf(payload)
+        df.columns = df.columns.str.replace(' ', '_')
+        try:
+            # Convert DataFrame to XML
+            xml_output = df.to_xml(index=False, root_name='Laptops', row_name='Laptop')
+            # Write XML to a file with UTF-8 encoding
+            with open("laptops.xml", "w", encoding="utf-8") as f:
+                f.write(xml_output)
+            print("Data inserted successfully into xml ")
+        except Exception as e:
+            print("Error occurred while inserting data into xml ", e)
+
+def df_to_excel(*args):
+    if len(args)==0:
+        print(env_vars.get('EMPTY_RESULTSET'))
+    else:
+        payload = categories_data_from_args(args)
+        df=mydf(payload)
+        df.columns = df.columns.str.replace(' ', '_')
+        try:
+            # Convert DataFrame to XML
+            # Write DataFrame to Excel file
+            df.to_excel("laptops.xlsx", index=False)
+            print("Data inserted successfully into excel ")
+        except Exception as e:
+            print("Error occurred while inserting data into excel ", e)
