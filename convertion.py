@@ -1,7 +1,32 @@
 import pandas as pd
 from functions.mysoup import env_vars
 from sqlalchemy import create_engine
-
+def my_credentials():
+    database_url = f"mysql+mysqlconnector://{env_vars['DB_USER']}:{env_vars['DB_PASSWORD']}@{env_vars['DB_HOST']}:{env_vars['DB_PORT']}/{env_vars['DB_NAME']}"
+    engine = create_engine(database_url, echo=False)
+    return engine
+def mydf(payload):
+    df = pd.DataFrame.from_dict(payload, orient='index')
+    # starting index 1 instead of 0
+    df.index = range(1,len(df)+1)
+    # Rename the index and columns using a dictionary
+    df.rename_axis("myindex")
+    df = df.rename(columns={'arg1': env_vars.get('ID_COLUMN_NAME2'),
+                            'arg2': env_vars.get('ID_COLUMN_NAME3')
+                            })
+    return df
+def categories_data_from_args(args):
+    payload = {}
+    # Iterate over each argument
+    for arg_index, arg in enumerate(args,start=0):
+        # Iterate over each value in the argument
+        for value_index, value in enumerate(arg):
+            # Check if the category already exists in the dictionary
+            if value_index not in payload:
+                payload[value_index] = {}
+            # Add the value to the corresponding category
+            payload[value_index][f'arg{arg_index+1}'] = value
+    return payload
 def df_to_csv(title_lst,price_lst):
     if len(title_lst) != len(price_lst):
         pass
@@ -13,18 +38,23 @@ def df_to_csv(title_lst,price_lst):
         df.to_csv(env_vars.get('csv_path'),index=False,encoding='utf-8')
         print(df)
 
-def df_to_mysql(title_lst,price_lst):
+#  using panda this is for direct into mysql without model
+def df_to_mysql(*args):
     # Set up the MySQL connection
-    print(f'{env_vars['DB_USER']}')
-    database_url = f"mysql+mysqlconnector://{env_vars['DB_USER']}:{env_vars['DB_PASSWORD']}@{env_vars['DB_HOST']}:{env_vars['DB_PORT']}/{env_vars['DB_NAME']}"
-    engine = create_engine(database_url, echo=False)
-    table_name = 'flipkart'
-    if len(title_lst) != len(price_lst):
-        pass
+    table_name = env_vars.get('TABLE_NAME')
+    print(table_name)
+    if table_name=='':
+        print('table does not found')
+    if len(args)==0:
+        print('resultset empty')
     else:
-        df=pd.DataFrame(
-            {"Title":tuple(title_lst),
-            "Price":tuple(price_lst)}
-        )
-    # Store DataFrame in MySQL
-    df.to_sql(table_name, con=engine, if_exists='replace', index=False)
+        payload = categories_data_from_args(args)
+        df=mydf(payload)
+        engine = my_credentials()
+        # Store DataFrame in MySQL
+        try:
+            df.to_sql(table_name, con=engine, if_exists="replace", index=True)
+            print("Data inserted successfully into MySQL table:", table_name)
+        except Exception as e:
+            print("Error occurred while inserting data into MySQL table:", e)
+
